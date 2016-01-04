@@ -1,64 +1,53 @@
-<div class="groups index">
-	<h2><?php echo __('Groups'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('parent_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('lft'); ?></th>
-			<th><?php echo $this->Paginator->sort('rght'); ?></th>
-			<th><?php echo $this->Paginator->sort('has_room'); ?></th>
-			<th><?php echo $this->Paginator->sort('need_approval'); ?></th>
-			<th><?php echo $this->Paginator->sort('can_read_by_self'); ?></th>
-			<th><?php echo $this->Paginator->sort('created_user'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified_user'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($groups as $group): ?>
-	<tr>
-		<td><?php echo h($group['Group']['id']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['parent_id']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['lft']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['rght']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['has_room']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['need_approval']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['can_read_by_self']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['created_user']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['created']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['modified_user']); ?>&nbsp;</td>
-		<td><?php echo h($group['Group']['modified']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $group['Group']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $group['Group']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $group['Group']['id']), null, __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?>
-		</td>
-	</tr>
-	<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+<?php
+/**
+ * Groups index template
+ *
+ * @author Masaki Goto <go8ogle@gmail.com>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ */
+
+echo $this->NetCommonsHtml->css(array(
+	'/groups/css/style.css',
+));
+echo $this->NetCommonsHtml->script('/groups/js/groups.js');
+?>
+
+<div class="text-right">
+	<?php echo $this->Button->addLink(); ?>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Group'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Rooms'), array('controller' => 'rooms', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Room'), array('controller' => 'rooms', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Languages'), array('controller' => 'languages', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Language'), array('controller' => 'languages', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
+
+<div class="table-responsive">
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th></th>
+				<th><?php echo __d('groups', 'Groups name'); ?></th>
+				<th><?php echo __d('groups', 'Groups modified'); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($groups as $index => $group): ?>
+			<tr>
+				<td>
+					<?php echo ($index + 1); ?>
+				</td>
+				<td>
+					<?php echo $this->Html->link(
+							$group['Group']['name'],
+							array(
+								'controller' => 'groups',
+								'action' => 'edit' . '/' . $group['Group']['id']
+							),
+							array(),
+							false
+					); ?>
+				</td>
+				<td>
+					<?php echo $group['Group']['modified'] ?>
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
 </div>

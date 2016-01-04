@@ -1,0 +1,12 @@
+.nc-groups-select-user-frame {
+	text-align: left;
+	border: 1px solid #999;
+	overflow: auto;
+}
+
+.group-selection-list {
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px 10px;
+}
