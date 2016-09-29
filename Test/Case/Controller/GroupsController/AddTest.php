@@ -125,7 +125,13 @@ class GroupsControllerAddTest extends GroupsControllerTestBase {
  * @return void
  */
 	public function testAddGetNotLogin() {
-		$this->_assertNotLogin('add');
+		$result = $this->_testGetAction(
+			array('action' => 'add'),
+			array('method' => 'assertNotEmpty'),
+			'ForbiddenException',
+			'view'
+		);
+		$this->assertNotEmpty($result);
 	}
 
 /**

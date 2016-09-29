@@ -43,14 +43,16 @@ if (! isset($roomId)) {
 			)); ?>
 		<div class="text-right" ng-controller="GroupsAddGroup" ng-init="initialize()">
 			<?php
-				echo $this->Button->addLink(__d('groups', 'Create a new group in the above-described member'),
-					'#',
-					array(
-						'tooltip' => __d('net_commons', 'Add'),
-						'ng-click' => 'showGroupAddDialog(' . Current::read('User.id') . ')',
-						'class' => 'btn btn-success nc-groups-show-add-btn'
-					)
-				);
+				if (Current::read('Permission.group_creatable.value')) :
+					echo $this->Button->addLink(__d('groups', 'Create a new group in the above-described member'),
+						'#',
+						array(
+							'tooltip' => __d('net_commons', 'Add'),
+							'ng-click' => 'showGroupAddDialog(' . Current::read('User.id') . ')',
+							'class' => 'btn btn-success nc-groups-show-add-btn'
+						)
+					);
+				endif;
 			?>
 		</div>
 	</div>

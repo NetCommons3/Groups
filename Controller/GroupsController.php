@@ -43,7 +43,7 @@ class GroupsController extends GroupsAppController {
 		'NetCommons.Permission' => array(
 			//アクセスの権限
 			'allow' => array(
-				'add,edit,delete' => null,
+				'add,edit,delete' => 'group_creatable',
 			),
 		),
 		'Groups.Groups',

@@ -42,6 +42,7 @@ $this->NetCommonsForm->unlockField($pluginModel . '.user_id');
 				<?php echo __d('groups', 'User search'); ?>
 			</a>
 		</div>
+		<?php if (Current::read('Permission.group_creatable.value')) : ?>
 		<div class="pull-right nc-groups-search-separator">
 			<?php echo __d('groups', 'Search separator'); ?>
 		</div>
@@ -55,6 +56,7 @@ $this->NetCommonsForm->unlockField($pluginModel . '.user_id');
 				<?php echo __d('groups', 'Group search'); ?>
 			</a>
 		</div>
+		<?php endif; ?>
 	</div>
 	<div id="groups-select-user-frame" class="panel-body nc-groups-select-user-frame">
 	<!--	ここに選択したユーザ情報を表示-->
