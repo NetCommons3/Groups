@@ -35,7 +35,7 @@ class Page4GroupsTestFixture extends PageFixture {
 	public $records = array(
 		array(
 			'id' => '7',
-			'room_id' => '4',
+			'room_id' => '5',
 			'parent_id' => null,
 			'lft' => 5,
 			'rght' => 6,

@@ -39,50 +39,50 @@ class RolesRoomsUser4GroupsTestFixture extends RolesRoomsUserFixture {
 			'id' => '1',
 			'roles_room_id' => '1',
 			'user_id' => '1',
-			'room_id' => '1',
+			'room_id' => '2',
 		),
 		array(
 			'id' => '2',
 			'roles_room_id' => '2',
 			'user_id' => '2',
-			'room_id' => '1',
+			'room_id' => '2',
 		),
 		array(
 			'id' => '3',
 			'roles_room_id' => '9',
 			'user_id' => '1',
-			'room_id' => '7',
+			'room_id' => '8',
 		),
 		array(
 			'id' => '4',
 			'roles_room_id' => '9',
 			'user_id' => '2',
-			'room_id' => '4',
+			'room_id' => '5',
 		),
 		array(
 			'id' => '5',
 			'roles_room_id' => '1',
 			'user_id' => '3',
-			'room_id' => '1',
+			'room_id' => '2',
 		),
 		//コミュニティスペース
 		array(
 			'id' => '6',
 			'roles_room_id' => '15',
 			'user_id' => '1',
-			'room_id' => '3',
+			'room_id' => '4',
 		),
 		array(
 			'id' => '7',
 			'roles_room_id' => '16',
 			'user_id' => '2',
-			'room_id' => '3',
+			'room_id' => '4',
 		),
 		array(
 			'id' => '8',
 			'roles_room_id' => '15',
 			'user_id' => '3',
-			'room_id' => '3',
+			'room_id' => '4',
 		),
 
 	);
