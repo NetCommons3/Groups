@@ -12,6 +12,7 @@
 
 App::uses('GroupsAppModel', 'Groups.Model');
 App::uses('Room', 'Rooms.Model');
+class_exists('Room'); //autoloaderのために必要
 
 /**
  * GroupsUser Model
