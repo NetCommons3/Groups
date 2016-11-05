@@ -55,7 +55,7 @@ class GroupsControllerUsersTest extends GroupsControllerTestBase {
 		if (is_array($paramGroupId)) {
 			$paramArray = array_merge(
 				$paramGroupId,
-				['room_id' => 1]
+				['room_id' => '2']
 			);
 		}
 		//テスト実行
