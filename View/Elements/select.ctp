@@ -27,7 +27,7 @@ if (isset($selectUsers) && is_array($selectUsers)) {
 	}
 }
 if (! isset($roomId)) {
-	$roomId = Room::ROOM_PARENT_ID;
+	$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
 }
 ?>
 <div class="panel panel-default">
