@@ -137,8 +137,8 @@ class Group extends GroupsAppModel {
  * @return mixed On success Model::$groupUsers
  * @throws InternalErrorException
  */
-	public function getGroupUser($groupId, $roomId = null) {
-		if (! isset($roomId)) {
+	public function getGroupUser($groupId, $roomId = false) {
+		if ($roomId === false) {
 			$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
 		}
 		$groups = $this->find('all', array(

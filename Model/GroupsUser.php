@@ -161,8 +161,8 @@ class GroupsUser extends GroupsAppModel {
  * @param int $roomId Room.id
  * @return array Group users array
  */
-	public function getGroupUsers($userIdArr, $roomId = null) {
-		if (! isset($roomId)) {
+	public function getGroupUsers($userIdArr, $roomId = false) {
+		if ($roomId === false) {
 			$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
 		}
 		if (empty($userIdArr)) {
