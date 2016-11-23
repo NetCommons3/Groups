@@ -27,7 +27,7 @@ if (isset($this->request->data['GroupsUser'])) {
 		}
 	}
 }
-$roomId = Room::ROOM_PARENT_ID;
+$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
 
 if (! isset($redirectUrl)) {
 	$redirectUrl = null;

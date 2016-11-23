@@ -70,7 +70,7 @@ class GroupGetGroupUserTest extends GroupsModelTestBase {
 
 /**
  * testGetGroupUser用dataProvider
- * 
+ *
  * ### 戻り値
  *  - id:	グループID
  */

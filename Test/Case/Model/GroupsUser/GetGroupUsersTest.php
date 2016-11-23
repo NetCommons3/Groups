@@ -17,7 +17,7 @@ App::uses('GroupsModelTestBase', 'Groups.Test/Case');
  * @author Yuna Miyashita <butackle@gmail.com>
  * @package NetCommons\Groups\Test\Case\Model\GroupsUser
  */
-class GroupsUsergetGroupUsersTest extends GroupsModelTestBase {
+class GroupsUserGetGroupUsersTest extends GroupsModelTestBase {
 
 /**
  * getGroupUsers()のテスト
@@ -112,7 +112,7 @@ class GroupsUsergetGroupUsersTest extends GroupsModelTestBase {
 
 /**
  * testGetGroupUsers用dataProvider
- * 
+ *
  * ### 戻り値
  *  - inputData:	入力データ
  *  - saveResult:	セーブ結果

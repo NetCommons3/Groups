@@ -136,8 +136,12 @@ class Group extends GroupsAppModel {
  * @param int $roomId ルームID
  * @return mixed On success Model::$groupUsers
  * @throws InternalErrorException
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
-	public function getGroupUser($groupId, $roomId = Room::ROOM_PARENT_ID) {
+	public function getGroupUser($groupId, $roomId = false) {
+		if ($roomId === false) {
+			$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
+		}
 		$groups = $this->find('all', array(
 			'fields' => array('Group.id', 'Group.name', 'Group.modified'),
 			'conditions' => array(

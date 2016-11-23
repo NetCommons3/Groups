@@ -160,8 +160,12 @@ class GroupsUser extends GroupsAppModel {
  * @param array $userIdArr GroupsUser.user_id
  * @param int $roomId Room.id
  * @return array Group users array
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
-	public function getGroupUsers($userIdArr, $roomId = Room::ROOM_PARENT_ID) {
+	public function getGroupUsers($userIdArr, $roomId = false) {
+		if ($roomId === false) {
+			$roomId = Space::getRoomIdRoot(Space::COMMUNITY_SPACE_ID);
+		}
 		if (empty($userIdArr)) {
 			return array();
 		}
