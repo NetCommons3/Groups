@@ -136,6 +136,7 @@ class Group extends GroupsAppModel {
  * @param int $roomId ルームID
  * @return mixed On success Model::$groupUsers
  * @throws InternalErrorException
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
 	public function getGroupUser($groupId, $roomId = false) {
 		if ($roomId === false) {

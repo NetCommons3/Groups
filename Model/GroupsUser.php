@@ -160,6 +160,7 @@ class GroupsUser extends GroupsAppModel {
  * @param array $userIdArr GroupsUser.user_id
  * @param int $roomId Room.id
  * @return array Group users array
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
  */
 	public function getGroupUsers($userIdArr, $roomId = false) {
 		if ($roomId === false) {
