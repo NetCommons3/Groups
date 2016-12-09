@@ -106,7 +106,8 @@ NetCommonsApp.controller('Group.add',
           var promise = deferred.promise;
           $scope.data = data;
           $http.get(NC3_URL + '/net_commons/net_commons/csrfToken.json')
-              .success(function(token) {
+              .then(function(response) {
+                var token = response.data;
                 $scope.data['data[_Token][key]'] = token.data._Token.key;
 
                 // POSTリクエスト
@@ -119,28 +120,29 @@ NetCommonsApp.controller('Group.add',
                         'Content-Type': 'application/x-www-form-urlencoded'
                       }
                     }
-                )
-                .success(function(data) {
+                ).then(
+                function(response) {
                       // success condition
+                      var data = response.data;
                       deferred.resolve(data);
-                    })
-                .error(function(data, status) {
-                      var target = $('#groups-input-name-' +
-                          options['userId'] + ' div.has-error');
+                    },
+                function(response) {
+                      var data = response.data;
+                      var target = $('#groups-input-name-' + options['userId'] + ' div.has-error');
                       target.empty();
-                      angular.forEach(data.error.validationErrors,
-                          function(errObj) {
-                            angular.forEach(errObj, function(errMsg) {
-                              target.append('<div class="help-block">' +
-                                  errMsg + '</div>');
-                            });
-                          });
+                      angular.forEach(data.error.validationErrors, function(errObj) {
+                        angular.forEach(errObj, function(errMsg) {
+                          target.append('<div class="help-block">' + errMsg + '</div>');
                         });
-              })
-                  .error(function(data, status) {
-                    // Token error condition
-                    deferred.reject(data, status);
-                  });
+                      });
+                    });
+              },
+              function(response) {
+                // Token error condition
+                var data = response.data;
+                var status = response.status;
+                deferred.reject(data, status);
+              });
 
           promise.success = function(fn) {
             promise.then(fn);
@@ -469,15 +471,16 @@ NetCommonsApp.controller('Group.select',
           $http.get(
               NC3_URL + '/groups/groups/users/' + $scope.userId,
               config
-          )
-          .success(function(data) {
-                // success condition
-                deferred.resolve(data);
-              })
-          .error(function(data, status) {
-                // error condition
-                deferred.reject(data, status);
-              });
+          ).then(function(response) {
+            // success condition
+            var data = response.data;
+            deferred.resolve(data);
+          }, function(response) {
+            // error condition
+            var data = response.data;
+            var status = response.status;
+            deferred.reject(data, status);
+          });
 
           promise.error = function(fn) {
             promise.then(null, fn);
