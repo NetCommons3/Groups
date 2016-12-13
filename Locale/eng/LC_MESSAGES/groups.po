@@ -49,7 +49,7 @@ msgstr ""
 #: Groups/View/Elements/list.ctp:79
 #: Groups/View/Elements/select_groups.ctp:33
 msgid "Group users truncate str"
-msgstr ""
+msgstr "..."
 
 #: Groups/View/Elements/list.ctp:91
 #: Groups/View/Groups/select.ctp:54
@@ -71,7 +71,7 @@ msgstr ""
 
 #: Groups/View/Elements/select_users.ctp:47
 msgid "Search separator"
-msgstr ""
+msgstr "|"
 
 #: Groups/View/Elements/select_users.ctp:56
 msgid "Group search"
