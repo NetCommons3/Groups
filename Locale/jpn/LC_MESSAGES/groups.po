@@ -14,53 +14,82 @@ msgstr ""
 "POT-Creation-Date: \n"
 "X-Generator: Poedit 1.8.1\n"
 
-msgid "Groups"
-msgstr "グループ"
-
-msgid "Groups management"
-msgstr "グループ管理"
-
-msgid "Group name"
-msgstr "グループ名"
-
-msgid "Group member"
-msgstr "メンバー"
-
+#: Groups/Model/Group.php:82
+#: Groups/Test/Case/GroupsModelTestBase.php:65
 msgid "Please enter group name"
 msgstr "グループ名を入力してください。"
 
+#: Groups/Model/Group.php:86
 msgid "Please enter group name no more than %s characters"
 msgstr "グループ名は%s文字以内で入力してください。"
 
+#: Groups/Model/GroupsUser.php:83
+#: Groups/Test/Case/GroupsModelTestBase.php:83
+#: Groups/View/Elements/select_users.ctp:63
 msgid "Select user"
 msgstr "ユーザを選択してください。"
 
-msgid "User select"
-msgstr "ユーザ選択"
-
-msgid "Group select"
-msgstr "グループ選択"
-
-msgid "Not found the group."
-msgstr "1件もありません。"
-
+#: Groups/Model/GroupsUser.php:98
+#: Groups/Test/Case/GroupsModelTestBase.php:105
 msgid "Can be registered upper limit is %s"
 msgstr "登録可能な上限は%s人です。"
 
-msgid "Group add"
-msgstr "グループ登録"
+#: Groups/View/Elements/delete_form.ctp:36;43
+msgid "Groups"
+msgstr "グループ"
 
+#: Groups/View/Elements/edit_form.ctp:44
+#: Groups/View/Elements/list.ctp:32
+msgid "Group name"
+msgstr "グループ名"
+
+#: Groups/View/Elements/list.ctp:34
+msgid "Group member"
+msgstr "メンバー"
+
+#: Groups/View/Elements/list.ctp:79
+#: Groups/View/Elements/select_groups.ctp:33
+msgid "Group users truncate str"
+msgstr "..."
+
+#: Groups/View/Elements/list.ctp:91
+#: Groups/View/Groups/select.ctp:54
+msgid "Not found the group."
+msgstr "1件もありません。"
+
+#: Groups/View/Elements/select.ctp:18
+#: Groups/View/Helper/GroupUserListHelper.php:82
+msgid "User select"
+msgstr "ユーザ選択"
+
+#: Groups/View/Elements/select.ctp:47
 msgid "Create a new group in the above-described member"
 msgstr "上記の会員でグループを新規作成"
 
+#: Groups/View/Elements/select_users.ctp:42
 msgid "User search"
 msgstr "ユーザ検索"
 
-msgid "Group search"
-msgstr "グループ検索"
-
+#: Groups/View/Elements/select_users.ctp:47
 msgid "Search separator"
 msgstr "|"
 
-msgid "Group users truncate str"
-msgstr "..."
+#: Groups/View/Elements/select_users.ctp:56
+msgid "Group search"
+msgstr "グループ検索"
+
+#: Groups/View/Groups/edit.ctp:35
+#: Users/Test/Case/Controller/UsersController/ViewTest.php:299;305
+#: Users/View/Users/edit.ctp:30
+#: Users/View/Users/view.ctp:35
+msgid "Groups management"
+msgstr "グループ管理"
+
+#: Groups/View/Groups/edit.ctp:41
+msgid "Group add"
+msgstr "グループ登録"
+
+#: Groups/View/Groups/select.ctp:38
+msgid "Group select"
+msgstr "グループ選択"
+
