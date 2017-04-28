@@ -31,9 +31,11 @@ if (! isset($roomId)) {
 }
 ?>
 <div class="panel panel-default">
-	<div class="panel-heading">
-		<?php echo h($title); ?>
-	</div>
+	<?php if ($title !== false) : ?>
+		<div class="panel-heading">
+			<?php echo h($title); ?>
+		</div>
+	<?php endif; ?>
 	<div class="panel-body">
 		<?php echo $this->element('Groups.select_users',
 			array(
