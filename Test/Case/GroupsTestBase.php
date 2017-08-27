@@ -18,7 +18,7 @@ App::uses('GroupsUser', 'Groups.Model');
  * @author Yuna Miyashita <butackle@gmail.com>
  * @package NetCommons\Groups\Test\Case\Controller
  */
-class GroupsTestBase extends NetCommonsControllerTestCase {
+abstract class GroupsTestBase extends NetCommonsControllerTestCase {
 
 /**
  * Fixtures
@@ -239,7 +239,7 @@ class GroupsTestBase extends NetCommonsControllerTestCase {
 	protected function _assertNotLogin($methodName = '') {
 		$result = $this->_testGetAction(
 			array('action' => $methodName, 1),
-			array('method' => 'assertNull'),
+			null,
 			null,
 			'view'
 		);
