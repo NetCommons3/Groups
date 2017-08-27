@@ -17,7 +17,7 @@ App::uses('GroupsTestBase', 'Groups.Test/Case');
  * @author Shohei Nakajima <nakajimashouhei@gmail.com>
  * @package NetCommons\Groups\Test\Case\Controller
  */
-class GroupsControllerTestBase extends GroupsTestBase {
+abstract class GroupsControllerTestBase extends GroupsTestBase {
 
 /**
  * setUp method
