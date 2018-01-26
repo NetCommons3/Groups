@@ -1,10 +1,14 @@
 {
     "name": "netcommons/groups",
     "description": "Groups Plugin for NetCommons",
-    "type":        "cakephp-plugin",
-    "keywords":    ["cakephp", "groups"],
-    "homepage":    "http://www.netcommons.org/",
-    "license":     "NetCommons License",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "groups"
+    ],
+    "homepage": "http://www.netcommons.org/",
+    "license": "LicenseRef-NetCommons",
+    "license-ref-net-commons": "https://raw.githubusercontent.com/NetCommons3/NetCommons3/master/license.txt",
     "authors": [
         {
             "name": "NetCommons Community",
@@ -13,17 +17,19 @@
     ],
     "extra": {
         "installer-paths": {
-            "app/Plugin/{$name}": ["type:cakephp-plugin"]
+            "app/Plugin/{$name}": [
+                "type:cakephp-plugin"
+            ]
         }
     },
     "require": {
-        "cakedc/migrations":            "~2.2",
-        "netcommons/files":             "@dev",
-        "netcommons/m17n":              "@dev",
-        "netcommons/net-commons":       "@dev",
-        "netcommons/rooms":             "@dev",
-        "netcommons/user-attributes":   "@dev",
-        "netcommons/users":             "@dev"
+        "cakedc/migrations": "~2.2",
+        "netcommons/files": "@dev",
+        "netcommons/m17n": "@dev",
+        "netcommons/net-commons": "@dev",
+        "netcommons/rooms": "@dev",
+        "netcommons/user-attributes": "@dev",
+        "netcommons/users": "@dev"
     },
     "config": {
         "vendor-dir": "vendors"
