@@ -306,7 +306,7 @@ NetCommonsApp.controller('GroupsSelectUser',
        * @return {void}
        */
       $scope.showUserSelectionDialog = function(userId, roomId) {
-        SelectUser($scope, userId, roomId).result.then(
+        SelectUser($scope, userId, roomId, $scope.users).result.then(
             function(result) {
               // 選択したユーザを追加
               $scope.$parent.addUsers(result);
