@@ -67,6 +67,8 @@ class GroupsUserGetGroupUsersTest extends GroupsModelTestBase {
 				}
 				continue;
 			}
+
+			$actualUser['UploadFile'] = $this->_removeModified($actualUser['UploadFile']);
 			$this->assertEquals(
 				array_merge(
 					$expectedUser['UploadFile']['avatar'],

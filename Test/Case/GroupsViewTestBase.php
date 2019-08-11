@@ -29,7 +29,8 @@ abstract class GroupsViewTestBase extends GroupsTestBase {
 		TestAuthGeneral::login($this);
 
 		CakeSession::write('Auth.User.UserRoleSetting.use_private_room', true);
-		Current::initialize($this->controller);
+		$instance = Current::getInstance();
+		$instance->initialize($this->controller);
 
 		//コントローラ内モデル
 		$this->_group = $this->controller->Group;

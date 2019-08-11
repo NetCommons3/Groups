@@ -77,7 +77,9 @@ class GroupsComponentSetGroupListTest extends GroupsTestBase {
 		$userIds = $this->_getExpectedUserIds([$strGroupId]);
 
 		//テスト実行
-		Current::initialize($this->controller);
+		$instance = Current::getInstance();
+		$instance->initialize($this->controller);
+
 		$this->controller->Groups->setGroupList(
 			$this->controller,
 			$this->__createGroupCondition($groupIds)
@@ -171,11 +173,9 @@ class GroupsComponentSetGroupListTest extends GroupsTestBase {
 				} else {
 					$expectedData = $dbData[$checkKey];
 				}
-				if ($checkKey === $this->__modelGroup) {
-					unset($expectedData['created_user']);
-					unset($expectedData['created']);
-					unset($expectedData['modified_user']);
-				}
+
+				$expectedData = $this->_removeModified($expectedData);
+				$actualData[$checkKey] = $this->_removeModified($actualData[$checkKey]);
 
 				$this->assertEquals(
 					$expectedData,
@@ -184,4 +184,5 @@ class GroupsComponentSetGroupListTest extends GroupsTestBase {
 			}
 		}
 	}
+
 }

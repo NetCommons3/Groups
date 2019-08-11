@@ -87,7 +87,8 @@ abstract class GroupsTestBase extends NetCommonsControllerTestCase {
 		parent::setUp();
 
 		CakeSession::write('Auth.User.UserRoleSetting.use_private_room', true);
-		Current::initialize($this->controller);
+		$instance = Current::getInstance();
+		$instance->initialize($this->controller);
 
 		//コントローラ内モデル
 		$this->_group = $this->controller->Group;
@@ -300,4 +301,27 @@ abstract class GroupsTestBase extends NetCommonsControllerTestCase {
 		$View->loadHelpers();
 		return $View;
 	}
+
+/**
+ * modifiedやcreatedカラムを除去する
+ *
+ * @param array $data データ
+ * @return array
+ */
+	protected function _removeModified($data) {
+		if (isset($data['created_user'])) {
+			unset($data['created_user']);
+		}
+		if (isset($data['created'])) {
+			unset($data['created']);
+		}
+		if (isset($data['modified_user'])) {
+			unset($data['modified_user']);
+		}
+		if (isset($data['modified'])) {
+			unset($data['modified']);
+		}
+		return $data;
+	}
+
 }
