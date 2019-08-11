@@ -60,7 +60,7 @@ class GroupsControllerUsersTest extends GroupsControllerTestBase {
 		}
 		//テスト実行
 		$this->_testGetAction(
-			array('action' => 'users', '?' => $paramArray ),
+			array('action' => 'users', '?' => $paramArray),
 			array('method' => 'assertNotEmpty'),
 			null,
 			'json'
