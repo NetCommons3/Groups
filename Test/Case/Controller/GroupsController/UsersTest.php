@@ -60,10 +60,10 @@ class GroupsControllerUsersTest extends GroupsControllerTestBase {
 		}
 		//テスト実行
 		$this->_testGetAction(
-			array('action' => 'users', '?' => $paramArray ),
+			array('action' => 'users', '?' => $paramArray),
 			array('method' => 'assertNotEmpty'),
 			null,
-			'json'
+			'view'
 		);
 		$this->__assertJson($existUserData);
 		if (!$existUserData) {
@@ -119,7 +119,7 @@ class GroupsControllerUsersTest extends GroupsControllerTestBase {
 			array('action' => 'users', '?' => [ 'group_id' => '1,2'] ),
 			array('method' => 'assertNotEmpty'),
 			null,
-			'json'
+			'view'
 		);
 		$this->__assertJson(false);
 	}
@@ -138,7 +138,7 @@ class GroupsControllerUsersTest extends GroupsControllerTestBase {
 			array('action' => 'users', '?' => [ 'group_id' => '1,2', 'room_id' => 999999998] ),
 			array('method' => 'assertNotEmpty'),
 			null,
-			'json'
+			'view'
 		);
 		$this->__assertJson(false);
 	}
