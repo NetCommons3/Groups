@@ -72,7 +72,7 @@ if (!empty($users)) {
 							?>
 
 							<?php echo $this->NetCommonsHtml->avatarLink(
-									$displayUser, ['alt' => $displayUser['handlename']], [], 'id'); ?>
+									$displayUser, ['alt' => h($displayUser['handlename'])], [], 'id'); ?>
 
 							<?php
 							if ($count >= GroupsUser::LIST_DISPLAY_NUM):
