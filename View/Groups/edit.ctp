@@ -14,6 +14,10 @@ echo $this->NetCommonsHtml->script(array(
 		'/groups/js/groups.js',
 		'/users/js/user_select.js',
 ));
+
+if (!isset($isModal)) {
+	$isModal = '0';
+}
 ?>
 
 <?php if (! (int)$isModal): ?>
